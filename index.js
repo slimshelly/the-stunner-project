@@ -1,46 +1,62 @@
-// scroll indicator component
-Vue.component('indicator', {
-  template:'<div id="indicator"></div>',
-  mounted:function(){
-    var vm = this
-    window.addEventListener('scroll', function(e){
-      var scrollPos = window.scrollY
-      var winHeight = window.innerHeight
-      var docHeight = document.documentElement.scrollHeight // instead document.body.clientHeight
-      var perc = 100 * scrollPos / (docHeight - winHeight)
-      vm.$el.style.width = perc + '%'
-    })
 
-  }
-})
+let $currentPage = void 0;
+let $nextPage = void 0;
 
+let inClass = void 0;
+let outClass = void 0;
+let $FW18 = $('.grid');
+let $SS19 = $(".blob-wrapper");
 
-// dummy text component
-Vue.component('txtdummy', {
-  template: '<h1>{{str}}</h1>',
-  data:function(){
-    return{
-      str: ''          
-    }
-  },
-  mounted:function(){
-    console.log(this);
-    var url = 'https://baconipsum.com/api/?type=meat-and-filler&paras=5&format=text'
+function myFunction1() {
 
-    var vm = this
-    axios.get(url)
-      .then(function(d){
-        vm.str = d.data
-      })
-      .catch(function(e){
-        console.log(e)
-      })
+	$currentPage = $(".blob-wrapper");
+	$nextPage = $(".grid");
+	// transition from right to left
+	inClass = 'moveFromLeft';
+    outClass = 'moveToRight';
 
-  }
-})
+    $('#fw18').addClass("underscore");
+    $currentPage.removeClass("underscore");
+
+	  $currentPage.addClass("current-page").addClass(outClass).on("animationend", function () {
+	    $currentPage.removeClass(outClass).removeClass("current-page");
+	    $currentPage.off("animationend");
+	  });
+
+	  $nextPage.addClass("current-page").addClass(inClass).on("animationend", function () {
+	    $nextPage.removeClass(inClass);
+	    $nextPage.off("animationend");
+
+		$(".blob-wrapper").addClass("hidden");
+	  });
+
+}
+
+function myFunction2() {
+	$(".blob-wrapper").removeClass("hidden");
 
 
-// Vue bootstrap
-new Vue({
-  el:'#app'
-})
+
+	$currentPage = $(".grid");
+	$nextPage = $(".blob-wrapper");
+
+	$('#ss19').addClass("underscore");
+    $currentPage.removeClass("underscore");
+	// transition from right to left
+	inClass = "moveFromRight";
+    outClass = "moveToLeft";
+
+	  $currentPage.addClass("current-page").addClass(outClass).on("animationend", function () {
+	    $currentPage.removeClass(outClass).removeClass("current-page");
+	    $currentPage.off("animationend");
+	  });
+
+	  $nextPage.addClass("current-page").addClass(inClass).on("animationend", function () {
+	    $nextPage.removeClass(inClass);
+	    $nextPage.off("animationend");
+	  });
+
+
+
+}
+

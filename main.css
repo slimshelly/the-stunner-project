@@ -1,3 +1,35 @@
+.underscore {
+  text-decoration: underline !important;
+}
+.hidden{
+  display: none !important;
+}
+
+.curr-page{
+  text-decoration: underline;
+}
+
+.page_nums {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  font-family: 'arial';
+  font-size: 13px;
+  font-weight: 800;
+  color: #171717;
+}
+
+.page_btn {
+  display: flex;
+  margin: 0.5em 0.5em;}
+
+.page_btn:hover {
+  cursor:pointer;
+  text-decoration: underline;
+  text-shadow: 0.5px 0.5px #C0C0C0;
+}
+
+
 .description-wrapper {
   padding-left: 2rem;
 }
@@ -11,13 +43,6 @@
   font-size: 5vw;
   margin: 20px;
   text-shadow: 2px 2px #f7d631;
-}
-
-#indicator {
-  position: fixed;
-  height: 10px;
-  background-color: red;
-  z-index: 999;
 }
 
 body {
@@ -65,6 +90,10 @@ p mark {
 
 .purple {
   text-shadow: 1px 1px #E288FB;
+}
+
+.glitter2 {
+  text-shadow: 2px 2px #D19FCD;
 }
 
 .glitter {
@@ -124,6 +153,7 @@ p mark {
 
 .body-container {
   padding: 2rem;
+
 }
 
 .remove-link-format {
@@ -132,6 +162,7 @@ p mark {
 }
 
 .grid {
+  background-color: white;
   display: flex;
   flex-wrap: wrap;
 }
@@ -141,7 +172,6 @@ p mark {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 10;
   background-color: white;
 }
 .grid a.divlink:hover .cover {
@@ -156,6 +186,7 @@ p mark {
 }
 
 .wrapper {
+
   width: calc(100% / 4);
   display: block;
 }
@@ -165,6 +196,7 @@ p mark {
 }
 
 .padded-container {
+
   display: block;
   height: 0;
   position: relative;
