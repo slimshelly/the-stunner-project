@@ -55,8 +55,6 @@ function myFunction2() {
 	    $nextPage.removeClass(inClass);
 	    $nextPage.off("animationend");
 	  });
-
-
-
+	$(".grid").addClass("hidden");
 }
 
