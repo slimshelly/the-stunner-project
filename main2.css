@@ -46,15 +46,23 @@
   background: white;
   position: absolute;
   display: grid;
-  margin: 20px;
+  margin: 2rem;
+  padding-right: 2rem;
 }
+
+h2 {
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+
 
 
 
 /* quick media query for a vw 2 column to 4 collumn layout */
 @media all and (min-width:500px) {
      .blob-wrapper {
-      grid-template-columns: repeat(3, 33vw);
+      grid-template-columns: repeat(3, 31vw);
     }
 
 
